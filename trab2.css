@@ -11,27 +11,31 @@ img{
 
 body{
         font-family:"Lucida Grande","Droid Sans",Arial,Helvetica,sans-serif;
+        background-image: url('robots-pattern-design.jpg');
+   
     }
 
-    /* .background-image {
-        z-index: -1;      
-        width: 100%;
-        height: 100%;
+    h1{
+        color: azure;
+    }
 
-        background-image: url('robots-pattern-design.jpg');
- 
-        position: absolute;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-      
-        -webkit-filter: blur(1px);
-        filter: blur(1px);
-        
-      } */
+    h3{
+        color: azure;
+    }
 
     #header{
-        text-align: center
+        text-align: center;
+        background:rgb(89, 155, 179);
+        border:1px solid #CCC;
+        width:340px;
+        margin:5px auto;
+        padding: 12px 20px 12px 40px;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+        display: flex;
+        -webkit-transition: width 0.4s ease-in-out;
+        transition: width 0.4s ease-in-out;
     }
         
     .legend{
@@ -56,7 +60,7 @@ input[type=text] {
     border: 2px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
-    background-color: white;
+    background-color: azure;
     background-image: url('searchicon.png');
     background-size: contain;
     background-repeat: no-repeat;
@@ -89,5 +93,5 @@ input[type=text]:focus {
 }
 
 #inline{width:100%;height:auto;background-color:black;display:flex;}
-#um{width:40%;float: left; margin:1px;}
-#dois{width:40%;float: right; margin:1px;}
+#um{width:40%;float: left; margin:1px; background:rgb(255, 255, 255); border:1px solid #CCC;}
+#dois{width:40%;float: right; margin:1px; background:rgb(255, 255, 255); border:1px solid #CCC;}
