@@ -1,8 +1,13 @@
 var fill = d3.scale.category20();
+
+function deleteThis() {
+    document.getElementById("dois").innerHTML = "";
+}
+
 function pegarNews() {
     url_parte1 = "https://newsapi.org/v2/everything?q=";
     var url_parte3 = "&apiKey=";
-    var key = "chave_aqui";
+    var key = "21abd04126a0427baf5922b6643ed7d1";
     var keyword_input = document.getElementById("keyword_input").value;
     console.log("Keyword: " + keyword_input);
     var url = url_parte1 + keyword_input + url_parte3 + key;
@@ -21,7 +26,7 @@ function pegarNews() {
             for (h = 0; h < novas_palavras.length; h++) {
                 if (novas_palavras[h].length < 5)
                 {
-                    console.log(novas_palavras[h]);
+                    //console.log(novas_palavras[h]);
                     novas_palavras.splice(h, 1);
                 }
                 else
@@ -50,22 +55,26 @@ function pegarNews() {
             .start();
  });
 
-function draw(words) {
-        d3.select("#dois").append("svg")
-        .attr("width", 500)
-        .attr("height", 500)
-        .append("g")
-        .attr("transform", "translate(250,250)")
-        .selectAll("text")
-        .data(words)
-        .enter().append("text")
-        .style("font-size", function(d) { return (d.size) + "px"; })
-        .style("font-family", "Impact")
-        .style("fill", function(d, i) { return fill(i); })
-        .attr("text-anchor", "middle")
-        .attr("transform", function(d) {
-            return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
-        })
-        .text(function(d) { return d.text; });
+    function draw(words) {
+            if(document.getElementsByClassName("dois") != null) {
+                deleteThis();
+            }
+            d3.select("#dois").append("svg")
+            .attr("width", 500)
+            .attr("height", 500)
+            .append("g")
+            .attr("transform", "translate(250,250)")
+            .selectAll("text")
+            .data(words)
+            .enter().append("text")
+            .style("font-size", function(d) { return (d.size) + "px"; })
+            .style("font-family", "Impact")
+            .style("fill", function(d, i) { return fill(i); })
+            .attr("text-anchor", "middle")
+            .attr("transform", function(d) {
+                return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+            })
+            .text(function(d) { return d.text; });
+    }
 }
-}
+
