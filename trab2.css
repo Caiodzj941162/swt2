@@ -4,3 +4,21 @@ img{
     height:100%;
     max-height:270px;
 }
+
+body{
+        font-family:"Lucida Grande","Droid Sans",Arial,Helvetica,sans-serif;
+    }
+.legend{
+        border: 1px solid #555555;
+        border-radius: 5px 5px 5px 5px;
+        font-size: 0.8em;
+        margin: 10px;
+        padding: 8px;
+    }
+.bld{
+        font-weight: bold;
+}
+
+#inline{width:100%;height:auto;background-color:black;display:flex;}
+#um{width:40%;float: left; margin:1px;}
+#dois{width:40%;float: right; margin:1px;}
